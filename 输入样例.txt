@@ -1,0 +1,20 @@
+设计一个能识别aaabbb类似字符串的图灵机：输入类似BabB，BaabbB，BaaabbbB，Baaa……bbb……B（a，b的数量相等）的字符串则接受该输入，否则拒绝。(周围有B包围)
+状态转移方程：
+
+0 B B r 0
+0 a B r 1
+0 b b r _
+1 B B l 2
+1 a a r 1
+1 b b r 1
+2 B B l _
+2 a a l _
+2 b B l 3
+3 B B l #
+3 a a l _
+3 b b l 4
+4 B B r 0
+4 a a l 4
+4 b b l 4
+$
+
